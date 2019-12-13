@@ -6,35 +6,9 @@
       "!VectorR": true,
       "!Wrapping": true,
       "!WrappingVariant": false,
-      "!StackedReplicas": false
-    },
-    {
-      "!ElectionWithFallbackPoSt": true,
-      "!SectorEncoding": true,
-      "!VectorR": true,
-      "!WrappingVariant": true,
-      "!Wrapping": false,
-      "!StackedReplicas": false
-    },
-    {
-      "!ElectionWithFallbackPoSt": true,
-      "!SectorEncoding": true,
-      "!VectorR": true,
-      "!Wrapping": false,
-      "!WrappingVariant": false,
-      "!StackedReplicas": true
-    }
-  ],
-  [
-    {
-      "!StackedChungParameters": true,
-      "!StackedSDRParameters": false,
-      "chung_delta": 0.01
-    },
-    {
+      "!StackedReplicas": false,
       "!StackedChungParameters": false,
-      "!StackedSDRParameters": true,
-      "sdr_delta": 0.01
+      "!StackedSDRParameters": true
     }
   ],
   {
@@ -52,12 +26,12 @@
     "filecoin_storage_capacity_eib": 10,
     "hash_gb_per_second": 5,
     "hashing_amax": 2,
-    "kdf_constraints": 25000,
-    "kdf_time": 1.28e-8,
+    "kdf_constraints": 14066,
+    "kdf_time": 5.4e-7,
     "merkle_tree_datahash_constraints": 56000,
     "merkle_tree_datahash_time": 1.28e-8,
     "merkle_tree_hash_constraints": 1376,
-    "merkle_tree_hash_time": 2.56e-7,
+    "merkle_tree_hash_time": 1.7028e-5,
     "node_size": 32,
     "polling_time": 15,
     "porep_lambda": 10,
@@ -73,12 +47,17 @@
     "rig_storage_min_tib": 100,
     "rig_storage_parallelization": 30,
     "rig_storage_read_mbs": 80,
-    "sector_size_gib": 32,
-    "snark_constraint_time": 0.000004642,
+    "sector_size_gib": 1,
+    "snark_constraint_time": 3.012e-5,
     "snark_size": 192,
     "ticket_constraints": 1376,
     "ticket_hash": 2.56e-7,
-    "window_size_mib": 32768,
-    "wrapper_parents": 10
+    "window_size_mib": 512,
+    "wrapper_parents_all": 15,
+    "drg_parents": 1,
+    "expander_parents": 15,
+    "porep_challenges": 1,
+    "porep_partions": 1,
+    "stacked_layers": 2
   }
 ]
