@@ -419,3 +419,28 @@ ChainBandwidth:
       avg_proofs_messages_per_block = proof_messages_fraction * messages
       tx_messages_per_block = tx_messages_fraction * messages
       actors_messages_per_block = actors_messages_fraction * messages
+
+MinMinerSize:
+  describe(election_frequency, "Frequency of leader election win by miner size.", wins_per_time)
+  describe(miner_power_fraction, "Fraction of total power per equi-sized miner.", fraction)
+  describe(miner_size, "Amount of power one equi-sized miner has.", bytes)
+  describe(election_epoch_probability, "Likelihood of a miner being elected in any epoch.", fraction)
+  describe(surprise_sampling_probability, "Likelihood of a miner being surprised in a given epoch.", fraction)
+  elections_per_proving_period = election_epoch_probability * post_proving_period
+  election_epoch_probability = miner_power_fraction * expected_winning_miners
+  miner_size = storage_network_capacity / miners
+  miner_size_tib = miner_size / tib
+  miner_power_fraction = miner_size / storage_network_capacity
+  expected_epochs_to_win = 1 / election_epoch_probability
+  miners_surprised_per_epoch = (miners / post_proving_period) + 1 // poor man's ceiling.
+  surprise_sampling_probability = 1 / miners_surprised_per_epoch
+// 1. post proof size
+// we knnow 1 ePoSt per block
+// we can pick maxSPoSt per block
+// 2. we know election epoch proba and proving period
+// we know post grace period (i.e. period of no surprise if you won a post)
+// we can determine expected number of sposts per miner per epoch (accounting for e post)
+// 3. we know total miner num
+// we can determine posts per epoch across the network
+// 4. we can grow min miner size to lower posts per epoch
+// or we can grow proving period to lower posts per epoch

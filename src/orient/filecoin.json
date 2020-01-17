@@ -1,4 +1,5 @@
 {
+  "!RationalPoSt": true,
   "degree_expander": 8,
   "degree_base": 6,
   "node_size": 32,
@@ -17,10 +18,11 @@
   "kdf_hash_size": 32,
   "proof_messages_fraction": 0.4,
   "tx_messages_fraction": 0.3,
-  "miners": 1000,
+  "miners": 100000,
   "spacegap": 0.1,
   "expected_winning_miners": 5,
   "lambda": 10,
   "sector_size_gib": 32,
-  "post_challenge_hours": 2
+  "post_challenge_hours": 2,
+  "max_block_size": 1048576
 }
