@@ -1,0 +1,15 @@
+SealStorageCost:
+  describe(relative_storage_sealing_spend, "Relative spend on storage vs sealing capacity.", fraction)
+  relative_storage_sealing_cost = storage_cost / sealing_cost
+
+  base_storage_cost = sealing_capacity
+  leftover_budget = budget - base_storage_cost
+  has_surplus =  leftover_budget > 0                                           // Ignore output where this is not true; TODO: fix inequality filtering.
+  new_storage_capacity = leftover_budget / (1 + relative_storage_sealing_cost)
+  new_sealing_capacity = new_storage_capacity
+  new_storage_cost = new_storage_capacity * storage_cost
+  new_sealing_cost = new_sealing_capacity * sealing_cost
+  current_storage_cost = new_storage_cost + base_storage_cost
+  current_sealing_cost = new_sealing_cost
+  relative_storage_sealing_spend = current_storage_cost / current_sealing_cost
+

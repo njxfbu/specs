@@ -1,0 +1,25 @@
+[
+  {
+    "storage_cost": 1
+  },
+  [
+    {"sealing_cost": 0.75},
+    {"sealing_cost": 1},
+    {"sealing_cost": 1.5},
+    {"sealing_cost": 2}
+  ],
+ [
+   { "sealing_capacity": 1000 }
+ ],
+ [
+   { "storage_capacity": 2000 },
+   { "storage_capacity": 5000 },
+   { "storage_capacity": 10000 },
+   { "storage_capacity": 20000 }
+ ],
+
+  [
+    { "budget": 2000 },
+    { "budget": 3000 }
+  ]
+]
